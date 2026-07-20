@@ -4,8 +4,8 @@
 
 A *cactus graph* is a connected graph in which every edge lies on at most
 one cycle. This repository accompanies a paper that enumerates *strict
-m-gonal cacti*, cacti in which every block (every maximal 2-connected
-piece) is a cycle of the same fixed length *m*, with no bridges at all,
+m-gonal cacti* — cacti in which every block (every maximal 2-connected
+piece) is a cycle of the same fixed length *m*, with no bridges at all —
 in the *free* (non-plane) setting: the graph is counted as an abstract
 object, with no cyclic order imposed on the blocks meeting at a shared
 vertex. This is the case that existing literature (Bahrani & Lumbroso,
@@ -71,6 +71,12 @@ independent cross-checks and are not needed to follow the paper.
   of Conjecture 1, computed from the τ_m-substitution described in the
   text (see the script's docstring for why this differs from the exact,
   currently-unusable Lemma 5 criterion itself).
+- **`verify_boltzmann.py`** — independently re-implements the Boltzmann
+  sampler of Section 5.4 (the Burnside-style identity/reflection stabilizer
+  choice, built recursively rather than sampled from the known coefficient
+  distribution) and validates it against the exact enumerative data for
+  m=5. A stated simplification (the dominant i=1 term of the MSET
+  construction only) is documented in the script.
 
 ## Usage
 
@@ -82,6 +88,7 @@ python3 split_tree_v2.py
 python3 exhaustive_iso.py    # requires: pip install networkx
 python3 asymptotic_convergence.py
 python3 verify_lemma5.py
+python3 verify_boltzmann.py
 ```
 
 No dependencies beyond the Python standard library, `numpy`, and
@@ -128,7 +135,7 @@ repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461101
 
 ## Author
 
-Frédéric G. Speyser - Independent Researcher, France - ORCID: https://orcid.org/0000-0002-1767-5325
+Frédéric G. Speyser - Independent Researcher, France - ORCID: 0000-0002-1767-5325
 
 ## License
 
