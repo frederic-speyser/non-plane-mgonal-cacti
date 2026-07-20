@@ -4,8 +4,8 @@
 
 A *cactus graph* is a connected graph in which every edge lies on at most
 one cycle. This repository accompanies a paper that enumerates *strict
-m-gonal cacti* — cacti in which every block (every maximal 2-connected
-piece) is a cycle of the same fixed length *m*, with no bridges at all —
+m-gonal cacti*, cacti in which every block (every maximal 2-connected
+piece) is a cycle of the same fixed length *m*, with no bridges at all,
 in the *free* (non-plane) setting: the graph is counted as an abstract
 object, with no cyclic order imposed on the blocks meeting at a shared
 vertex. This is the case that existing literature (Bahrani & Lumbroso,
