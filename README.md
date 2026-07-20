@@ -77,6 +77,13 @@ independent cross-checks and are not needed to follow the paper.
   distribution) and validates it against the exact enumerative data for
   m=5. A stated simplification (the dominant i=1 term of the MSET
   construction only) is documented in the script.
+- **`verify_lemmas234.py`** — independent reconstruction of the graph G
+  from a graph-labeled tree satisfying Theorem 1's conditions (a)-(d),
+  checking Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block
+  and a 3-block example. The script's docstring records a genuine
+  construction bug found and fixed during this verification (in the
+  script itself, not the paper) — a useful cross-check of how precisely
+  the paper's stated construction must be followed.
 
 ## Usage
 
@@ -89,6 +96,7 @@ python3 exhaustive_iso.py    # requires: pip install networkx
 python3 asymptotic_convergence.py
 python3 verify_lemma5.py
 python3 verify_boltzmann.py
+python3 verify_lemmas234.py
 ```
 
 No dependencies beyond the Python standard library, `numpy`, and
@@ -131,7 +139,7 @@ the review of the remaining submissions proceeds.
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: https://doi.org/10.5281/zenodo.21462502
+repository is available via Zenodo: XXXXXXXXXXXXX (Ref. TBA).
 
 ## Author
 
