@@ -7,6 +7,17 @@ date on each entry.
 
 (nothing yet)
 
+## [1.2] - 2026-07-20
+
+### Added
+- `verify_lemmas234.py` — independent reconstruction of the graph from a
+  graph-labeled tree satisfying Theorem 1's conditions (a)-(d), checking
+  Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block and a
+  3-block example.
+
+### Changed
+- `README.md` — added description and usage line for `verify_lemmas234.py`.
+
 ## [1.1] - 2026-07-20
 
 ### Added
