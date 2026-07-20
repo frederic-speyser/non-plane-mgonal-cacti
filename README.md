@@ -143,7 +143,7 @@ repository is available via Zenodo: https://doi.org/10.5281/zenodo.21462772
 
 ## Author
 
-Frédéric G. Speyser - Independent Researcher, France - ORCID: 0000-0002-1767-5325
+Frédéric G. Speyser - Independent Researcher, France - ORCID: https://orcid.org/0000-0002-1767-5325
 
 ## License
 
