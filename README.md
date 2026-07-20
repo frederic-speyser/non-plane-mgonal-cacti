@@ -139,7 +139,7 @@ the review of the remaining submissions proceeds.
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: XXXXXXXXXXXXX (Ref. TBA).
+repository is available via Zenodo: https://doi.org/10.5281/zenodo.21462772
 
 ## Author
 
