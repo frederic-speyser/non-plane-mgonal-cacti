@@ -1,16 +1,32 @@
-
-
-Readme · MD
 # Enumeration of Non-Plane m-Gonal Cactus Graphs — verification code
- 
+
+## About this research
+
+A *cactus graph* is a connected graph in which every edge lies on at most
+one cycle. This repository accompanies a paper that enumerates *strict
+m-gonal cacti* — cacti in which every block (every maximal 2-connected
+piece) is a cycle of the same fixed length *m*, with no bridges at all —
+in the *free* (non-plane) setting: the graph is counted as an abstract
+object, with no cyclic order imposed on the blocks meeting at a shared
+vertex. This is the case that existing literature (Bahrani & Lumbroso,
+2018; Bóna, Bousquet, Labelle & Leroux, 2000) covers in principle but never
+instantiates numerically for a fixed *m* ≥ 5. The paper derives the
+functional equations explicitly, obtains a closed-form growth rate for *m*
+odd, proves that the same approach is structurally obstructed for *m* even,
+and conjectures that the growth rate decreases strictly with *m*.
+
+The scripts below independently generate and cross-check every numerical
+claim in the paper, by several unrelated methods, so that a reader does not
+have to take any of the enumerative or asymptotic data on faith.
+
 Independent verification scripts accompanying:
- 
+
 > Fr. G. Speyser, *Enumeration of Non-Plane m-Gonal Cactus Graphs via Split-Decomposition*.
 > Submitted to *The Electronic Journal of Combinatorics*.
 > Preprint: arXiv:XXXX.XXXXX (Ref. TBA)
- 
+
 ## Core scripts
- 
+
 - **`mgonal_cactus_series.py`** — computes the rooted and unrooted enumeration
   series for strict *m*-gonal cactus graphs (free / non-plane case), for
   *m* = 5, 6, 7, 8, directly from the defining functional equations of the
@@ -23,11 +39,12 @@ Independent verification scripts accompanying:
   *n*<sup>−3/2</sup>-corrected ratio test, independent of the analytic
   criticality system (Theorems 2–4). Used as supporting numerical evidence
   for Conjecture 1.
+
 ## Supplementary verification scripts
- 
+
 These go beyond what the paper itself requires; they were added as further,
 independent cross-checks and are not needed to follow the paper.
- 
+
 - **`verify_pari.gp`** (PARI/GP) — recomputes the rooted series for all four
   *m* using PARI's native truncated power series arithmetic (a different
   code path from the two Python scripts above), and verifies Theorem 2's
@@ -54,8 +71,9 @@ independent cross-checks and are not needed to follow the paper.
   of Conjecture 1, computed from the τ_m-substitution described in the
   text (see the script's docstring for why this differs from the exact,
   currently-unusable Lemma 5 criterion itself).
+
 ## Usage
- 
+
 ```bash
 python3 mgonal_cactus_series.py
 python3 mgonal_cactus_growth_rate.py
@@ -65,12 +83,12 @@ python3 exhaustive_iso.py    # requires: pip install networkx
 python3 asymptotic_convergence.py
 python3 verify_lemma5.py
 ```
- 
+
 No dependencies beyond the Python standard library, `numpy`, and
 `networkx` (for `exhaustive_iso.py` only). `verify_pari.gp` requires PARI/GP.
- 
+
 ## Relation to existing OEIS arrays
- 
+
 The eight sequences computed here coincide, term for term, with columns
 *k* = 5, 6, 7, 8 of two general arrays already on the OEIS:
 [A332648](https://oeis.org/A332648) (rooted case) and
@@ -80,35 +98,39 @@ re-verified here by two methods: direct comparison against the published
 data of A332648/A332649, and a symbolic recomputation using a different
 algorithm from the one in `mgonal_cactus_series.py`. Both confirm exact
 agreement.
- 
+
 ## Data availability
- 
-The integer sequences computed by `mgonal_cactus_series.py` are submitted to
-the OEIS (On-Line Encyclopedia of Integer Sequences). Accession numbers so
-far:
- 
-- *m* = 5, rooted: [A398033](https://oeis.org/A398033)
-- *m* = 5, unrooted: [A397250](https://oeis.org/A397250)
-- *m* = 6, rooted: [A398034](https://oeis.org/A398034)
-- *m* = 6, unrooted: [A398035](https://oeis.org/A398035)
-- *m* = 7, 8 (rooted and unrooted): submissions pending (Ref. TBA)
+
+The eight integer sequences computed by `mgonal_cactus_series.py` have been
+submitted to the OEIS (On-Line Encyclopedia of Integer Sequences); none has
+yet been formally accepted at the time of writing. Submissions so far:
+
+- *m* = 5, rooted: [A398033](https://oeis.org/A398033) (submitted)
+- *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (submitted)
+- *m* = 6, rooted: [A398034](https://oeis.org/A398034) (submitted)
+- *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (submitted)
+- *m* = 7, 8 (rooted and unrooted): prepared and independently verified;
+  submission pending
+
 ## Acknowledgments
- 
+
 Thanks to Andrew Howroyd — a long-standing OEIS editor whose own work centers
 on Pólya enumeration — for identifying the relation to A332648/A332649 (both
-his own OEIS arrays) and for an independent PARI verification of the data.
-Thanks also to Stefano Spezia, Robert C. Lyons, and Sean A. Irvine for their
-review of the OEIS submissions above.
- 
+his own OEIS arrays) and for an independent PARI verification of the data,
+and to Stefano Spezia, Robert C. Lyons, and Sean A. Irvine for their review
+of the OEIS submissions above. Further contributors may be added here as
+the review of the remaining submissions proceeds.
+
 ## Citation
- 
+
 If you use this code, please cite the paper above. A citable archive of this
 repository is available via Zenodo: XXXXXXXXXXXXX (Ref. TBA).
- 
+
 ## Author
- 
-Frédéric G. Speyser — ORCID: https://orcid.org/0000-0002-1767-5325
- 
+
+Frédéric G. Speyser — Independent Researcher, France. 
+ORCID: 0000-0002-1767-5325
+
 ## License
- 
+
 MIT (see `LICENSE`).
