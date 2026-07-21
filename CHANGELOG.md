@@ -7,6 +7,13 @@ date on each entry.
 
 (nothing yet)
 
+## [1.3] - 2026-07-21
+
+### Changed
+- `asymptotic_convergence.py` — extended to m=8 (previously only m=5 and
+  m=6), closing the last gap in Theorem 4's empirical verification: both
+  even values of m treated in the paper are now covered, not just one.
+
 ## [1.2] - 2026-07-20
 
 ### Added
