@@ -1,4 +1,4 @@
-# Enumeration of Non-Plane m-Gonal Cactus Graphs — verification code
+# Enumeration of Non-Plane m-Gonal Cactus Graphs - verification code
 
 ## About this research
 
@@ -139,7 +139,7 @@ the review of the remaining submissions proceeds.
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: https://doi.org/10.5281/zenodo.21462772
+repository is available via Zenodo: [10.5281/zenodo.21462772](https://doi.org/10.5281/zenodo.21462772)
 
 ## Author
 
