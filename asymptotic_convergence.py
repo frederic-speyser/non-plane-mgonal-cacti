@@ -6,10 +6,9 @@ Empirical verification of Theorems 3-4's conclusion: that
     s_n ~ C_m * rho_m^(-n) * n^(-3/2)
 
 really holds as n grows, for both an odd m (5, closed-form tau_m) and an
-even m (6, where Theorem 4's proof was corrected -- see the paper's working
-notes -- to include a term missed in a first draft). This complements the
-exact-arithmetic checks (mgonal_cactus_series.py) by testing the theorem's
-conclusion directly, across many terms, rather than an intermediate formula.
+even m (6). This complements the exact-arithmetic checks
+(mgonal_cactus_series.py) by testing the theorem's conclusion directly,
+across many terms, rather than an intermediate formula.
 
 Two implementations are given:
   - a fast one (numpy, double precision) that reaches many terms quickly,
@@ -70,6 +69,7 @@ def solve_s_fast(m, N):
 CASES = {
     5: dict(rho=0.604765, C=0.7905),
     6: dict(rho=0.633235, C=0.8736),
+    8: dict(rho=0.690268, C=1.0312),
 }
 
 
@@ -86,3 +86,4 @@ def report(m, N=1200, stride=100):
 if __name__ == "__main__":
     report(5)
     report(6)
+    report(8)
