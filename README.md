@@ -1,4 +1,4 @@
-# Enumeration of Non-Plane m-Gonal Cactus Graphs - verification code
+# Enumeration of Non-Plane m-Gonal Cactus Graphs — verification code
 
 ## About this research
 
@@ -45,39 +45,38 @@ Independent verification scripts accompanying:
 These go beyond what the paper itself requires; they were added as further,
 independent cross-checks and are not needed to follow the paper.
 
-- **`verify_pari.gp`** (PARI/GP) — recomputes the rooted series for all four
+- **`verify_pari.gp`** (PARI/GP) - recomputes the rooted series for all four
   *m* using PARI's native truncated power series arithmetic (a different
   code path from the two Python scripts above), and verifies Theorem 2's
   closed form for τ*m* (*m* odd) by independent numerical root-finding.
-- **`split_tree_v2.py`** — a from-scratch, brute-force split-decomposition
+- **`split_tree_v2.py`** - a from-scratch, brute-force split-decomposition
   search (Definition 1), used to test Theorem 1 directly on small graphs:
   positive cases (genuine strict *m*-gonal cacti) and negative cases (a
   chord added inside a block, a bridge between two blocks, a cycle of the
-  wrong length) — checking that the characterization's condition (a) holds
+  wrong length) - checking that the characterization's condition (a) holds
   or fails exactly as it should.
-- **`exhaustive_iso.py`** — builds strict 5-gonal cacti with 1, 2, and 3
+- **`exhaustive_iso.py`** - builds strict 5-gonal cacti with 1, 2, and 3
   blocks directly as graphs (no functional equation involved at all) and
   deduplicates by graph isomorphism (via `networkx`), recovering the counts
   1, 1, 3 independently of any of the series computations above.
-- **`asymptotic_convergence.py`** — checks empirically that s_n really
-  converges to C_m·ρ_m^(-n)·n^(-3/2) as n grows (Theorems 3–4), for both an
-  odd *m* (5) and an even *m* (6, the case whose proof required a
-  correction — see the paper's working notes). Includes a documented
+- **`asymptotic_convergence.py`** - checks empirically that s_n really
+  converges to C_m·ρ_m^(-n)·n^(-3/2) as n grows (Theorems 3-4), for both an
+  odd *m* (5) and an even *m* (6). Includes a documented
   finding: a naive double-precision run shows a spurious uptick in the
-  ratio beyond n ≈ 1000, which disappears at 60-digit precision — i.e. a
+  ratio beyond n ≈ 1000, which disappears at 60-digit precision, i.e. a
   floating-point artifact, not a real effect.
-- **`verify_lemma5.py`** — independently reproduces the three numerical
+- **`verify_lemma5.py`** - independently reproduces the three numerical
   transition values (1.045, 0.855, 0.971) quoted in the paper's discussion
   of Conjecture 1, computed from the τ_m-substitution described in the
   text (see the script's docstring for why this differs from the exact,
   currently-unusable Lemma 5 criterion itself).
-- **`verify_boltzmann.py`** — independently re-implements the Boltzmann
+- **`verify_boltzmann.py`** - independently re-implements the Boltzmann
   sampler of Section 5.4 (the Burnside-style identity/reflection stabilizer
   choice, built recursively rather than sampled from the known coefficient
   distribution) and validates it against the exact enumerative data for
   m=5. A stated simplification (the dominant i=1 term of the MSET
   construction only) is documented in the script.
-- **`verify_lemmas234.py`** — independent reconstruction of the graph G
+- **`verify_lemmas234.py`** - independent reconstruction of the graph G
   from a graph-labeled tree satisfying Theorem 1's conditions (a)-(d),
   checking Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block
   and a 3-block example. The script's docstring records a genuine
@@ -129,8 +128,8 @@ yet been formally accepted at the time of writing. Submissions so far:
 
 ## Acknowledgments
 
-Thanks to Andrew Howroyd — a long-standing OEIS editor whose own work centers
-on Pólya enumeration — for identifying the relation to A332648/A332649 (both
+Thanks to Andrew Howroyd, a long-standing OEIS editor whose own work centers
+on Pólya enumeration, for identifying the relation to A332648/A332649 (both
 his own OEIS arrays) and for an independent PARI verification of the data,
 and to Stefano Spezia, Robert C. Lyons, and Sean A. Irvine for their review
 of the OEIS submissions above. Further contributors may be added here as
@@ -139,11 +138,12 @@ the review of the remaining submissions proceeds.
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: [10.5281/zenodo.21462772](https://doi.org/10.5281/zenodo.21462772)
+repository is available via Zenodo: [10.5281/zenodo.21462772](https://doi.org/10.5281/zenodo.21462772).
 
 ## Author
 
-Frédéric G. Speyser - Independent Researcher, France - ORCID: https://orcid.org/0000-0002-1767-5325
+Frédéric G. Speyser — Independent Researcher, France
+ORCID: 0000-0002-1767-5325
 
 ## License
 
