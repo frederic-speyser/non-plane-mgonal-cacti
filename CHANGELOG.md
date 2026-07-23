@@ -7,6 +7,17 @@ date on each entry.
 
 (nothing yet)
 
+## [1.4] - 2026-07-23
+
+### Changed
+- `README.md` — title and citation updated to reflect the paper's final
+  title ("Enumeration and Asymptotic Analysis of Strict Non-Plane m-Gonal
+  Cactus Graphs via Split-Decomposition"), including publication year.
+- `README.md` — added the preprint's Zenodo DOI (Concept DOI, resolves to
+  the latest version) to the citation.
+- `README.md` — updated A397250's status to "approved" in the Data
+  availability section.
+
 ## [1.3] - 2026-07-21
 
 ### Changed
