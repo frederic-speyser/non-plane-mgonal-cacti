@@ -1,11 +1,11 @@
-# Enumeration of Non-Plane m-Gonal Cactus Graphs - verification code
+# Enumeration and Asymptotic Analysis of Strict Non-Plane m-Gonal Cactus Graphs - Verification scripts
 
 ## About this research
 
 A *cactus graph* is a connected graph in which every edge lies on at most
 one cycle. This repository accompanies a paper that enumerates *strict
-m-gonal cacti* — cacti in which every block (every maximal 2-connected
-piece) is a cycle of the same fixed length *m*, with no bridges at all —
+m-gonal cacti* - cacti in which every block (every maximal 2-connected
+piece) is a cycle of the same fixed length *m*, with no bridges at all -
 in the *free* (non-plane) setting: the graph is counted as an abstract
 object, with no cyclic order imposed on the blocks meeting at a shared
 vertex. This is the case that existing literature (Bahrani & Lumbroso,
@@ -21,20 +21,20 @@ have to take any of the enumerative or asymptotic data on faith.
 
 Independent verification scripts accompanying:
 
-> Fr. G. Speyser, *Enumeration of Non-Plane m-Gonal Cactus Graphs via Split-Decomposition*.
+> Fr. G. Speyser, *Enumeration and Asymptotic Analysis of Strict Non-Plane m-Gonal Cactus Graphs via Split-Decomposition*.
 > Submitted to *The Electronic Journal of Combinatorics*.
-> Preprint: arXiv:XXXX.XXXXX (Ref. TBA)
+> Preprint: https://doi.org/10.5281/zenodo.21513752
 
 ## Core scripts
 
-- **`mgonal_cactus_series.py`** — computes the rooted and unrooted enumeration
+- **`mgonal_cactus_series.py`** - computes the rooted and unrooted enumeration
   series for strict *m*-gonal cactus graphs (free / non-plane case), for
   *m* = 5, 6, 7, 8, directly from the defining functional equations of the
   split-decomposition grammar (Sections 5.1–5.3 of the paper), using exact
   rational formal power series arithmetic. Running it reproduces the
   coefficients tabulated in Sections 6.1–6.2 of the paper and prints the
   first 25 terms of each of the eight sequences submitted to the OEIS.
-- **`mgonal_cactus_growth_rate.py`** — estimates the exponential growth rate
+- **`mgonal_cactus_growth_rate.py`** - estimates the exponential growth rate
   1/ρ*m* directly from the coefficients computed above, via an
   *n*<sup>−3/2</sup>-corrected ratio test, independent of the analytic
   criticality system (Theorems 2–4). Used as supporting numerical evidence
@@ -81,7 +81,7 @@ independent cross-checks and are not needed to follow the paper.
   checking Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block
   and a 3-block example. The script's docstring records a genuine
   construction bug found and fixed during this verification (in the
-  script itself, not the paper) — a useful cross-check of how precisely
+  script itself, not the paper) - a useful cross-check of how precisely
   the paper's stated construction must be followed.
 
 ## Usage
@@ -116,11 +116,11 @@ agreement.
 ## Data availability
 
 The eight integer sequences computed by `mgonal_cactus_series.py` have been
-submitted to the OEIS (On-Line Encyclopedia of Integer Sequences); none has
-yet been formally accepted at the time of writing. Submissions so far:
+submitted to the OEIS (On-Line Encyclopedia of Integer Sequences). Status
+so far:
 
 - *m* = 5, rooted: [A398033](https://oeis.org/A398033) (submitted)
-- *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (submitted)
+- *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (approved)
 - *m* = 6, rooted: [A398034](https://oeis.org/A398034) (submitted)
 - *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (submitted)
 - *m* = 7, 8 (rooted and unrooted): prepared and independently verified;
@@ -138,12 +138,12 @@ the review of the remaining submissions proceeds.
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: https://doi.org/10.5281/zenodo.21474053
+repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100
 
 ## Author
 
-Frédéric G. Speyser — Independent Researcher, France
-ORCID: 0000-0002-1767-5325
+Frédéric G. Speyser - Independent Researcher, France
+[ORCID: 0000-0002-1767-5325](https://orcid.org/0000-0002-1767-5325)
 
 ## License
 
