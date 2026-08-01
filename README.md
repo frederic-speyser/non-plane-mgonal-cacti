@@ -83,6 +83,13 @@ independent cross-checks and are not needed to follow the paper.
   construction bug found and fixed during this verification (in the
   script itself, not the paper) — a useful cross-check of how precisely
   the paper's stated construction must be followed.
+- **`verify_dissymmetry_m6.py`** - independently assembles the unrooted
+  series for m=6 (A398035) entirely from the dissymmetry theorem (§5.3),
+  including an explicit symbolic implementation of the dihedral cycle
+  index Z_D6 (equation 8), using only the already-verified rooted series
+  as input. A genuinely different computational path from every other
+  script here: no Euler transform, no direct graph construction, just
+  symbolic Taylor-coefficient assembly.
 
 ## Usage
 
@@ -96,9 +103,10 @@ python3 asymptotic_convergence.py
 python3 verify_lemma5.py
 python3 verify_boltzmann.py
 python3 verify_lemmas234.py
+python3 verify_dissymmetry_m6.py    # requires: pip install sympy
 ```
 
-No dependencies beyond the Python standard library, `numpy`, and
+No dependencies beyond the Python standard library, `numpy`, `sympy`, and
 `networkx` (for `exhaustive_iso.py` only). `verify_pari.gp` requires PARI/GP.
 
 ## Relation to existing OEIS arrays
@@ -142,8 +150,7 @@ repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100
 
 ## Author
 
-Frédéric G. Speyser — Independent Researcher, France
-ORCID: 0000-0002-1767-5325
+Frédéric G. Speyser — Independent Researcher, France - https://orcid.org/0000-0002-1767-5325
 
 ## License
 
