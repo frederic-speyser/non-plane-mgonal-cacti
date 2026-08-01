@@ -7,6 +7,12 @@ date on each entry.
 
 (nothing yet)
 
+## [1.5] - 2026-08-01
+
+### Changed
+- `README.md` — updated A398033's status to "approved" in the Data
+  availability section.
+
 ## [1.4] - 2026-07-23
 
 ### Changed
