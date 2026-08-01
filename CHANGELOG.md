@@ -7,6 +7,18 @@ date on each entry.
 
 (nothing yet)
 
+## [1.6] - 2026-08-01
+
+### Added
+- `verify_dissymmetry_m6.py` — independent assembly of the unrooted m=6
+  series (A398035) from the dissymmetry theorem, including an explicit
+  symbolic implementation of the dihedral cycle index Z_D6, using only
+  the already-verified rooted series as input.
+
+### Changed
+- `README.md` — added description and usage line for
+  `verify_dissymmetry_m6.py`.
+
 ## [1.5] - 2026-08-01
 
 ### Changed
