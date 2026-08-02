@@ -3,17 +3,30 @@
 ## About this research
 
 A *cactus graph* is a connected graph in which every edge lies on at most
-one cycle. This repository accompanies a paper that enumerates *strict
-m-gonal cacti* — cacti in which every block (every maximal 2-connected
-piece) is a cycle of the same fixed length *m*, with no bridges at all —
-in the *free* (non-plane) setting: the graph is counted as an abstract
-object, with no cyclic order imposed on the blocks meeting at a shared
-vertex. This is the case that existing literature (Bahrani & Lumbroso,
-2018; Bóna, Bousquet, Labelle & Leroux, 2000) covers in principle but never
-instantiates numerically for a fixed *m* ≥ 5. The paper derives the
-functional equations explicitly, obtains a closed-form growth rate for *m*
-odd, proves that the same approach is structurally obstructed for *m* even,
-and conjectures that the growth rate decreases strictly with *m*.
+one cycle — equivalently, every block (maximal 2-connected piece) is either
+a bridge or a cycle. Under the name *Husimi trees*, cacti were first studied
+in statistical mechanics, and their enumeration has been a recurring problem
+in analytic combinatorics ever since. This repository accompanies a paper
+that enumerates *strict m-gonal cacti* — cacti in which every block is a
+cycle of the same fixed length *m*, with no bridges at all — in the *free*
+(non-plane) setting: the graph is counted as an abstract object, with no
+cyclic order imposed on the blocks meeting at a shared vertex (as opposed
+to the *plane*, or embedded, case, where such an order is fixed and
+distinguishes otherwise-identical graphs).
+
+Existing literature (Bahrani & Lumbroso, 2018; Bóna, Bousquet, Labelle &
+Leroux, 2000) provides a general split-decomposition framework that covers
+this free/non-plane case in principle, but never instantiates it
+numerically for any fixed *m* ≥ 5, and never carries out an asymptotic
+analysis for it. The paper closes that gap: it derives the functional
+equations explicitly for fixed *m*, obtains a **closed-form expression**
+for the critical growth-rate value when *m* is odd, **proves** that the
+same closed-form approach is structurally obstructed when *m* is even
+(not merely that it hasn't been found), and carries out a full singularity
+analysis in both cases. It also conjectures, with numerical support, that
+the exponential growth rate decreases strictly as *m* increases. The
+resulting enumerative data has also been submitted to the OEIS (see
+"Relation to existing OEIS arrays" and "Data availability" below).
 
 The scripts below independently generate and cross-check every numerical
 claim in the paper, by several unrelated methods, so that a reader does not
@@ -31,9 +44,10 @@ Independent verification scripts accompanying:
   series for strict *m*-gonal cactus graphs (free / non-plane case), for
   *m* = 5, 6, 7, 8, directly from the defining functional equations of the
   split-decomposition grammar (Sections 5.1–5.3 of the paper), using exact
-  rational formal power series arithmetic. Running it reproduces the
-  coefficients tabulated in Sections 6.1–6.2 of the paper and prints the
-  first 25 terms of each of the eight sequences submitted to the OEIS.
+  rational formal power series arithmetic (Python `Fraction`). This is the
+  script that generated the enumerative data tabulated in the paper and
+  submitted to the OEIS. All other scripts below verify this one's output
+  by independent means.
 - **`mgonal_cactus_growth_rate.py`** — estimates the exponential growth rate
   1/ρ*m* directly from the coefficients computed above, via an
   *n*<sup>−3/2</sup>-corrected ratio test, independent of the analytic
@@ -43,53 +57,79 @@ Independent verification scripts accompanying:
 ## Supplementary verification scripts
 
 These go beyond what the paper itself requires; they were added as further,
-independent cross-checks and are not needed to follow the paper.
+independent cross-checks and are not needed to follow the paper. They were
+developed progressively, one question at a time, as the paper and its OEIS
+submissions were prepared — which is why several of them target the same
+underlying data by genuinely different computational routes: that
+redundancy is the point, not an oversight, and the CHANGELOG below records
+the order in which each check was added.
 
-- **`verify_pari.gp`** (PARI/GP) - recomputes the rooted series for all four
-  *m* using PARI's native truncated power series arithmetic (a different
-  code path from the two Python scripts above), and verifies Theorem 2's
-  closed form for τ*m* (*m* odd) by independent numerical root-finding.
-- **`split_tree_v2.py`** - a from-scratch, brute-force split-decomposition
+- **`verify_pari.gp`** (PARI/GP) — recomputes the rooted series for all four
+  *m* using PARI's **native truncated power series arithmetic**, solving
+  the functional equation of §5.1 directly (a different code path from
+  `mgonal_cactus_series.py`'s Fraction-based recursion). Also verifies
+  Theorem 2's closed form for τ*m* (*m* odd) by independent numerical
+  root-finding.
+- **`verify_pari_euler.gp`** (PARI/GP) — a *second*, differently-structured
+  PARI verification of the same four rooted series, this time via an
+  **explicit Euler-transform recurrence**: the same principle Andrew
+  Howroyd used in his own PARI code on A398033 (m=5), generalized here to
+  all four values of *m* and both parities, with a built-in self-check
+  against the known first ten terms of each. Kept alongside `verify_pari.gp`
+  deliberately: the two use unrelated internal machinery (native series
+  solving vs. explicit combinatorial recurrence) even though both are
+  PARI/GP, so agreement between them is a genuine cross-check, not a
+  restatement of the same computation in the same language.
+- **`split_tree_v2.py`** — a from-scratch, brute-force split-decomposition
   search (Definition 1), used to test Theorem 1 directly on small graphs:
   positive cases (genuine strict *m*-gonal cacti) and negative cases (a
   chord added inside a block, a bridge between two blocks, a cycle of the
-  wrong length) - checking that the characterization's condition (a) holds
+  wrong length) — checking that the characterization's condition (a) holds
   or fails exactly as it should.
-- **`exhaustive_iso.py`** - builds strict 5-gonal cacti with 1, 2, and 3
+- **`exhaustive_iso.py`** — builds strict 5-gonal cacti with 1, 2, and 3
   blocks directly as graphs (no functional equation involved at all) and
   deduplicates by graph isomorphism (via `networkx`), recovering the counts
   1, 1, 3 independently of any of the series computations above.
-- **`asymptotic_convergence.py`** - checks empirically that s_n really
-  converges to C_m·ρ_m^(-n)·n^(-3/2) as n grows (Theorems 3-4), for both an
-  odd *m* (5) and an even *m* (6). Includes a documented
-  finding: a naive double-precision run shows a spurious uptick in the
-  ratio beyond n ≈ 1000, which disappears at 60-digit precision, i.e. a
-  floating-point artifact, not a real effect.
-- **`verify_lemma5.py`** - independently reproduces the three numerical
+- **`asymptotic_convergence.py`** — checks empirically that s_n really
+  converges to C_m·ρ_m^(-n)·n^(-3/2) as n grows (Theorems 3-4). Covers
+  *m* = 5, 6, 7, 8 — one odd/even pair was verified first (5 and 6, then
+  8), and *m* = 7 was added subsequently to complete the coverage of every
+  value of *m* the paper actually treats numerically, for both parities.
+  Includes a documented finding: a naive double-precision run shows a
+  spurious uptick in the ratio beyond n ≈ 1000 for m=5, which disappears
+  entirely at 60-digit precision — a floating-point artifact, not a real
+  secondary term.
+- **`verify_lemma5.py`** — independently reproduces the three numerical
   transition values (1.045, 0.855, 0.971) quoted in the paper's discussion
   of Conjecture 1, computed from the τ_m-substitution described in the
   text (see the script's docstring for why this differs from the exact,
   currently-unusable Lemma 5 criterion itself).
-- **`verify_boltzmann.py`** - independently re-implements the Boltzmann
+- **`verify_boltzmann.py`** — independently re-implements the Boltzmann
   sampler of Section 5.4 (the Burnside-style identity/reflection stabilizer
   choice, built recursively rather than sampled from the known coefficient
   distribution) and validates it against the exact enumerative data for
   m=5. A stated simplification (the dominant i=1 term of the MSET
   construction only) is documented in the script.
-- **`verify_lemmas234.py`** - independent reconstruction of the graph G
+- **`verify_lemmas234.py`** — independent reconstruction of the graph G
   from a graph-labeled tree satisfying Theorem 1's conditions (a)-(d),
   checking Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block
   and a 3-block example. The script's docstring records a genuine
   construction bug found and fixed during this verification (in the
   script itself, not the paper) — a useful cross-check of how precisely
   the paper's stated construction must be followed.
-- **`verify_dissymmetry_m6.py`** - independently assembles the unrooted
-  series for m=6 (A398035) entirely from the dissymmetry theorem (§5.3),
-  including an explicit symbolic implementation of the dihedral cycle
-  index Z_D6 (equation 8), using only the already-verified rooted series
-  as input. A genuinely different computational path from every other
-  script here: no Euler transform, no direct graph construction, just
-  symbolic Taylor-coefficient assembly.
+- **`verify_dissymmetry_m6.py`** — the *first* version of the dissymmetry-
+  theorem verification (Section 5.3), written specifically for m=6
+  (A398035) while that pair of sequences was being prepared: assembles
+  G(x) = T_Cm(x) + T_S(x) - T_{S-Cm}(x) from scratch in SymPy, including
+  an explicit symbolic implementation of the dihedral cycle index Z_D6
+  (equation 8, even-*m* branch), using only the already-verified rooted
+  series as input.
+- **`verify_dissymmetry_all_m.py`** — the *generalized* version of the
+  script above: the same dissymmetry-theorem assembly, but written to
+  handle both parities and all four values of *m* the paper treats (5, 6,
+  7, 8) in a single script, with a self-check against the known unrooted
+  data for each. Kept alongside `verify_dissymmetry_m6.py` as the record
+  of how the general version was arrived at, one case at a time.
 
 ## Usage
 
@@ -97,17 +137,20 @@ independent cross-checks and are not needed to follow the paper.
 python3 mgonal_cactus_series.py
 python3 mgonal_cactus_growth_rate.py
 gp -q verify_pari.gp
+gp -q verify_pari_euler.gp
 python3 split_tree_v2.py
 python3 exhaustive_iso.py    # requires: pip install networkx
 python3 asymptotic_convergence.py
 python3 verify_lemma5.py
 python3 verify_boltzmann.py
 python3 verify_lemmas234.py
-python3 verify_dissymmetry_m6.py    # requires: pip install sympy
+python3 verify_dissymmetry_m6.py      # requires: pip install sympy
+python3 verify_dissymmetry_all_m.py   # requires: pip install sympy
 ```
 
 No dependencies beyond the Python standard library, `numpy`, `sympy`, and
-`networkx` (for `exhaustive_iso.py` only). `verify_pari.gp` requires PARI/GP.
+`networkx` (for `exhaustive_iso.py` only). The two `.gp` scripts require
+PARI/GP.
 
 ## Relation to existing OEIS arrays
 
@@ -129,8 +172,8 @@ so far:
 
 - *m* = 5, rooted: [A398033](https://oeis.org/A398033) (approved)
 - *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (approved)
-- *m* = 6, rooted: [A398034](https://oeis.org/A398034) (submitted)
-- *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (submitted)
+- *m* = 6, rooted: [A398034](https://oeis.org/A398034) (proposed, pending review)
+- *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (proposed, pending review)
 - *m* = 7, 8 (rooted and unrooted): prepared and independently verified;
   submission pending
 
