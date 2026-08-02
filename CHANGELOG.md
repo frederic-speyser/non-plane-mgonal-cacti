@@ -26,6 +26,18 @@ date on each entry.
   why some scripts deliberately overlap in purpose (independent
   cross-checks via unrelated computational routes) rather than removing
   the overlap.
+- `README.md` — enriched the "About this research" section (historical
+  context, sharper statement of the paper's results) and added a note on
+  the progressive, one-question-at-a-time development of the
+  supplementary scripts.
+- `README.md` — A397210 (m=7, rooted) now allocated on the OEIS, in
+  draft/editing status; updated in the Data availability section.
+
+### Notes
+- Only one of the four remaining m=7/m=8 drafts could be created: the
+  OEIS limits active drafts per contributor to 3, already reached with
+  A398034 and A398035 still under review. The other three (m=7 unrooted,
+  m=8 rooted, m=8 unrooted) remain prepared but not yet created.
 
 ## [1.6] - 2026-08-01
 
