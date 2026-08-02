@@ -50,7 +50,7 @@ Independent verification scripts accompanying:
   by independent means.
 - **`mgonal_cactus_growth_rate.py`** — estimates the exponential growth rate
   1/ρ*m* directly from the coefficients computed above, via an
-  *n*<sup>−3/2</sup>-corrected ratio test, independent of the analytic
+  *n*−3/2-corrected ratio test, independent of the analytic
   criticality system (Theorems 2–4). Used as supporting numerical evidence
   for Conjecture 1.
 
@@ -167,15 +167,17 @@ agreement.
 ## Data availability
 
 The eight integer sequences computed by `mgonal_cactus_series.py` have been
-submitted to the OEIS (On-Line Encyclopedia of Integer Sequences). Status
-so far:
+submitted to the OEIS (On-Line Encyclopedia of Integer Sequences), or are
+in the process of being submitted. Status so far:
 
 - *m* = 5, rooted: [A398033](https://oeis.org/A398033) (approved)
 - *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (approved)
 - *m* = 6, rooted: [A398034](https://oeis.org/A398034) (proposed, pending review)
 - *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (proposed, pending review)
-- *m* = 7, 8 (rooted and unrooted): prepared and independently verified;
-  submission pending
+- *m* = 7, rooted: [A397210](https://oeis.org/A397210) (draft, in editing)
+- *m* = 7, unrooted, and *m* = 8 (rooted and unrooted): prepared and
+  independently verified; submission pending (OEIS limits active drafts
+  per contributor to 3, currently reached)
 
 ## Acknowledgments
 
@@ -193,7 +195,7 @@ repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100
 
 ## Author
 
-Frédéric G. Speyser — Independent Researcher, France - https://orcid.org/0000-0002-1767-5325
+Frédéric G. Speyser - Independent Researcher, France - ORCID: [0000-0002-1767-5325](https://orcid.org/0000-0002-1767-5325)
 
 ## License
 
