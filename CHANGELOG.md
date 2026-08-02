@@ -7,6 +7,26 @@ date on each entry.
 
 (nothing yet)
 
+## [1.7] - 2026-08-02
+
+### Added
+- `verify_pari_euler.gp` — second, independent PARI/GP verification of the
+  rooted series for m=5,6,7,8, via an explicit Euler-transform recurrence
+  (the same principle as Andrew Howroyd's code on A398033, generalized to
+  all four m and both parities), with a built-in self-check.
+- `verify_dissymmetry_all_m.py` — generalizes `verify_dissymmetry_m6.py`
+  to all four values of m (5, 6, 7, 8) and both parities, assembling the
+  unrooted series from the dissymmetry theorem in SymPy.
+
+### Changed
+- `asymptotic_convergence.py` — m=7 added, completing empirical coverage
+  of Theorems 3-4 for every value of m the paper treats numerically
+  (previously m=5, 6, 8 only).
+- `README.md` — reorganized script descriptions for clarity, explaining
+  why some scripts deliberately overlap in purpose (independent
+  cross-checks via unrelated computational routes) rather than removing
+  the overlap.
+
 ## [1.6] - 2026-08-01
 
 ### Added
