@@ -7,7 +7,29 @@ date on each entry.
 
 (nothing yet)
 
-## [1.7] - 2026-08-04
+## [1.8] - 2026-08-04
+
+### Changed
+- `README.md` — A398035 (m=6, unrooted) now formally approved; updated
+  in the Data availability section.
+- `README.md` — A398575 (m=7, unrooted) now allocated on the OEIS, in
+  draft/editing status; updated in the Data availability section.
+- `README.md` — A398034 (m=6, rooted) now formally approved; updated
+  in the Data availability section.
+- `README.md` — A397546 (m=8, rooted) now allocated on the OEIS, in
+  draft/editing status; updated in the Data availability section. Only
+  m=8 unrooted remains to be created (draft limit of 3 reached again:
+  A397210, A398575, A397546).
+- `README.md` — added Michael De Vlieger to the Acknowledgments section
+  (approved A398035), previously missing.
+
+### Notes
+- Six of the eight sequences now have a real OEIS number: four formally
+  approved (A398033, A397250, A398034, A398035), two in draft/editing
+  status (A397210, A398575), one more allocated (A397546). Only m=8
+  unrooted remains to be created.
+
+## [1.7] - 2026-08-02
 
 ### Added
 - `verify_pari_euler.gp` — second, independent PARI/GP verification of the
@@ -32,24 +54,12 @@ date on each entry.
   supplementary scripts.
 - `README.md` — A397210 (m=7, rooted) now allocated on the OEIS, in
   draft/editing status; updated in the Data availability section.
-- `README.md` — A398035 (m=6, unrooted) now formally approved; updated
-  in the Data availability section.
-- `README.md` — A398575 (m=7, unrooted) now allocated on the OEIS, in
-  draft/editing status; updated in the Data availability section.
-- `README.md` — A398034 (m=6, rooted) now formally approved; updated
-  in the Data availability section.
-- `README.md` — A397546 (m=8, rooted) now allocated on the OEIS, in
-  draft/editing status; updated in the Data availability section. Only
-  m=8 unrooted remains to be created (draft limit of 3 reached again:
-  A397210, A398575, A397546).
-- `README.md` — added Michael De Vlieger to the Acknowledgments section
-  (approved A398035), previously missing.
 
 ### Notes
-- Six of the eight sequences now have a real OEIS number: four formally
-  approved (A398033, A397250, A398034, A398035), two in draft/editing
-  status (A397210, A398575), one more allocated (A397546). Only m=8
-  unrooted remains to be created.
+- Only one of the four remaining m=7/m=8 drafts could be created: the
+  OEIS limits active drafts per contributor to 3, already reached with
+  A398034 and A398035 still under review. The other three (m=7 unrooted,
+  m=8 rooted, m=8 unrooted) remain prepared but not yet created.
 
 ## [1.6] - 2026-08-01
 
