@@ -173,19 +173,21 @@ in the process of being submitted. Status so far:
 - *m* = 5, rooted: [A398033](https://oeis.org/A398033) (approved)
 - *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (approved)
 - *m* = 6, rooted: [A398034](https://oeis.org/A398034) (proposed, pending review)
-- *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (proposed, pending review)
+- *m* = 6, unrooted: [A398035](https://oeis.org/A398035) (approved)
 - *m* = 7, rooted: [A397210](https://oeis.org/A397210) (draft, in editing)
-- *m* = 7, unrooted, and *m* = 8 (rooted and unrooted): prepared and
-  independently verified; submission pending (OEIS limits active drafts
-  per contributor to 3, currently reached)
+- *m* = 7, unrooted: [A398575](https://oeis.org/A398575) (draft, in editing)
+- *m* = 8, rooted: [A397546](https://oeis.org/A397546) (draft, in editing)
+- *m* = 8, unrooted: prepared and independently verified; submission
+  pending (OEIS limits active drafts per contributor to 3, currently
+  reached)
 
 ## Acknowledgments
 
 Thanks to Andrew Howroyd, a long-standing OEIS editor whose own work centers
 on Pólya enumeration, for identifying the relation to A332648/A332649 (both
 his own OEIS arrays) and for an independent PARI verification of the data,
-and to Stefano Spezia, Robert C. Lyons, and Sean A. Irvine for their review
-of the OEIS submissions above. Further contributors may be added here as
+and to Stefano Spezia, Robert C. Lyons, Sean A. Irvine, and Michael De
+Vlieger for their review of the OEIS submissions above. Further contributors may be added here as
 the review of the remaining submissions proceeds.
 
 ## Citation
@@ -195,7 +197,7 @@ repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100
 
 ## Author
 
-Frédéric G. Speyser - Independent Researcher, France - ORCID: [0000-0002-1767-5325](https://orcid.org/0000-0002-1767-5325)
+Frédéric G. Speyser — Independent Researcher, France - https://orcid.org/0000-0002-1767-5325
 
 ## License
 
