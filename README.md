@@ -7,8 +7,8 @@ one cycle — equivalently, every block (maximal 2-connected piece) is either
 a bridge or a cycle. Under the name *Husimi trees*, cacti were first studied
 in statistical mechanics, and their enumeration has been a recurring problem
 in analytic combinatorics ever since. This repository accompanies a paper
-that enumerates *strict m-gonal cacti* — cacti in which every block is a
-cycle of the same fixed length *m*, with no bridges at all — in the *free*
+that enumerates *strict m-gonal cacti* - cacti in which every block is a
+cycle of the same fixed length *m*, with no bridges at all - in the *free*
 (non-plane) setting: the graph is counted as an abstract object, with no
 cyclic order imposed on the blocks meeting at a shared vertex (as opposed
 to the *plane*, or embedded, case, where such an order is fixed and
@@ -40,7 +40,7 @@ Independent verification scripts accompanying:
 
 ## Core scripts
 
-- **`mgonal_cactus_series.py`** — computes the rooted and unrooted enumeration
+- **`mgonal_cactus_series.py`** - computes the rooted and unrooted enumeration
   series for strict *m*-gonal cactus graphs (free / non-plane case), for
   *m* = 5, 6, 7, 8, directly from the defining functional equations of the
   split-decomposition grammar (Sections 5.1–5.3 of the paper), using exact
@@ -48,7 +48,7 @@ Independent verification scripts accompanying:
   script that generated the enumerative data tabulated in the paper and
   submitted to the OEIS. All other scripts below verify this one's output
   by independent means.
-- **`mgonal_cactus_growth_rate.py`** — estimates the exponential growth rate
+- **`mgonal_cactus_growth_rate.py`** - estimates the exponential growth rate
   1/ρ*m* directly from the coefficients computed above, via an
   *n*−3/2-corrected ratio test, independent of the analytic
   criticality system (Theorems 2–4). Used as supporting numerical evidence
@@ -64,13 +64,13 @@ underlying data by genuinely different computational routes: that
 redundancy is the point, not an oversight, and the CHANGELOG below records
 the order in which each check was added.
 
-- **`verify_pari.gp`** (PARI/GP) — recomputes the rooted series for all four
+- **`verify_pari.gp`** (PARI/GP) - recomputes the rooted series for all four
   *m* using PARI's **native truncated power series arithmetic**, solving
   the functional equation of §5.1 directly (a different code path from
   `mgonal_cactus_series.py`'s Fraction-based recursion). Also verifies
   Theorem 2's closed form for τ*m* (*m* odd) by independent numerical
   root-finding.
-- **`verify_pari_euler.gp`** (PARI/GP) — a *second*, differently-structured
+- **`verify_pari_euler.gp`** (PARI/GP) - a *second*, differently-structured
   PARI verification of the same four rooted series, this time via an
   **explicit Euler-transform recurrence**: the same principle Andrew
   Howroyd used in his own PARI code on A398033 (m=5), generalized here to
@@ -80,7 +80,7 @@ the order in which each check was added.
   solving vs. explicit combinatorial recurrence) even though both are
   PARI/GP, so agreement between them is a genuine cross-check, not a
   restatement of the same computation in the same language.
-- **`verify_pari_dissymmetry_odd_m.gp`** (PARI/GP) — verifies the
+- **`verify_pari_dissymmetry_odd_m.gp`** (PARI/GP) - verifies the
   dissymmetry-theorem decomposition of §5.3 (G(x) = T_Cm(x) + T_S(x) -
   T_{S-Cm}(x)) by yet another, unrelated route from
   `verify_dissymmetry_m6.py` / `verify_dissymmetry_all_m.py`: starting
@@ -93,7 +93,7 @@ the order in which each check was added.
   specialized closed form and Howroyd's unmodified general formula agree
   exactly (all 13 terms checked), and that both reproduce the published
   A398575 data.
-- **`verify_pari_dissymmetry_even_m.gp`** (PARI/GP) — the even-*m*
+- **`verify_pari_dissymmetry_even_m.gp`** (PARI/GP) - the even-*m*
   companion to the script above, for m=8. Unlike the odd case, **no
   two-term closed form exists here**: 8 has four divisors rather than
   two, and Howroyd's general formula carries an extra term active only
@@ -104,7 +104,7 @@ the order in which each check was added.
   formula and against `mgonal_cactus_series.py`'s independent exact-
   rational solver (12 terms, exact agreement), without claiming a
   simplification the even case does not structurally admit.
-- **`exhaustive_iso_m8.py`** — a *different kind* of check for m=8
+- **`exhaustive_iso_m8.py`** - a *different kind* of check for m=8
   unrooted, since no algebraic simplification was available: builds
   strict 8-gonal cacti with 1, 2, and 3 blocks directly as graphs (no
   generating function, no PARI, no functional equation at all) and
@@ -112,17 +112,17 @@ the order in which each check was added.
   counts 1, 1, 5 independently — the same method `exhaustive_iso.py`
   already uses for m=5, applied here to the one case (m=8, unrooted)
   that has no closed-form verification available.
-- **`split_tree_v2.py`** — a from-scratch, brute-force split-decomposition
+- **`split_tree_v2.py`** - a from-scratch, brute-force split-decomposition
   search (Definition 1), used to test Theorem 1 directly on small graphs:
   positive cases (genuine strict *m*-gonal cacti) and negative cases (a
   chord added inside a block, a bridge between two blocks, a cycle of the
   wrong length) — checking that the characterization's condition (a) holds
   or fails exactly as it should.
-- **`exhaustive_iso.py`** — builds strict 5-gonal cacti with 1, 2, and 3
+- **`exhaustive_iso.py`** - builds strict 5-gonal cacti with 1, 2, and 3
   blocks directly as graphs (no functional equation involved at all) and
   deduplicates by graph isomorphism (via `networkx`), recovering the counts
   1, 1, 3 independently of any of the series computations above.
-- **`asymptotic_convergence.py`** — checks empirically that s_n really
+- **`asymptotic_convergence.py`** - checks empirically that s_n really
   converges to C_m·ρ_m^(-n)·n^(-3/2) as n grows (Theorems 3-4). Covers
   *m* = 5, 6, 7, 8 — one odd/even pair was verified first (5 and 6, then
   8), and *m* = 7 was added subsequently to complete the coverage of every
@@ -131,32 +131,32 @@ the order in which each check was added.
   spurious uptick in the ratio beyond n ≈ 1000 for m=5, which disappears
   entirely at 60-digit precision — a floating-point artifact, not a real
   secondary term.
-- **`verify_lemma5.py`** — independently reproduces the three numerical
+- **`verify_lemma5.py`** - independently reproduces the three numerical
   transition values (1.045, 0.855, 0.971) quoted in the paper's discussion
   of Conjecture 1, computed from the τ_m-substitution described in the
   text (see the script's docstring for why this differs from the exact,
   currently-unusable Lemma 5 criterion itself).
-- **`verify_boltzmann.py`** — independently re-implements the Boltzmann
+- **`verify_boltzmann.py`** - independently re-implements the Boltzmann
   sampler of Section 5.4 (the Burnside-style identity/reflection stabilizer
   choice, built recursively rather than sampled from the known coefficient
   distribution) and validates it against the exact enumerative data for
   m=5. A stated simplification (the dominant i=1 term of the MSET
   construction only) is documented in the script.
-- **`verify_lemmas234.py`** — independent reconstruction of the graph G
+- **`verify_lemmas234.py`** - independent reconstruction of the graph G
   from a graph-labeled tree satisfying Theorem 1's conditions (a)-(d),
   checking Lemmas 2 and 4 directly (and Lemma 3 implicitly) on a 2-block
   and a 3-block example. The script's docstring records a genuine
   construction bug found and fixed during this verification (in the
   script itself, not the paper) — a useful cross-check of how precisely
   the paper's stated construction must be followed.
-- **`verify_dissymmetry_m6.py`** — the *first* version of the dissymmetry-
+- **`verify_dissymmetry_m6.py`** - the *first* version of the dissymmetry-
   theorem verification (Section 5.3), written specifically for m=6
   (A398035) while that pair of sequences was being prepared: assembles
   G(x) = T_Cm(x) + T_S(x) - T_{S-Cm}(x) from scratch in SymPy, including
   an explicit symbolic implementation of the dihedral cycle index Z_D6
   (equation 8, even-*m* branch), using only the already-verified rooted
   series as input.
-- **`verify_dissymmetry_all_m.py`** — the *generalized* version of the
+- **`verify_dissymmetry_all_m.py`** - the *generalized* version of the
   script above: the same dissymmetry-theorem assembly, but written to
   handle both parities and all four values of *m* the paper treats (5, 6,
   7, 8) in a single script, with a self-check against the known unrooted
@@ -215,7 +215,7 @@ with two different outcomes:
   explicit two-term closed form (`verify_pari_dissymmetry_odd_m.gp`),
   giving A398575 exactly the kind of column-specific, independently
   checkable content Irvine's request was looking for.
-- **m=8 (even):** no such collapse exists — verified directly
+- **m=8 (even):** no such collapse exists - verified directly
   (`verify_pari_dissymmetry_even_m.gp`), not merely absent from a search.
   The data is independently confirmed correct by two unrelated methods
   (Howroyd's general formula, and brute-force graph construction in
@@ -247,11 +247,11 @@ below). Status so far:
   `verify_pari_dissymmetry_odd_m.gp` was prepared in response to an
   editor's request and is pending submission to the PROG field)
 - *m* = 8, rooted: [A397546](https://oeis.org/A397546) (approved;
-  same defense as A397210](https://oeis.org/A397210)
+  same defense as [A397210](https://oeis.org/A397210)
 - *m* = 8, unrooted: no standalone OEIS entry is needed. Unlike its
 odd-m counterpart, this column admits no closed-form simplification
 (see verify_pari_dissymmetry_even_m.gp), so it does not meet the same
-column-specific-content standard applied to [A398575](https://oeis.org/A398575) — and, unlike the
+column-specific-content standard applied to [A398575](https://oeis.org/A398575) - and, unlike the
 unsubmitted state that implies, it doesn't need to: this data is already
 exactly column k=8 of [A332649](https://oeis.org/A332649), which already
 cites this paper directly in its own LINKS field. The data is
