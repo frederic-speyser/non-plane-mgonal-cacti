@@ -277,10 +277,31 @@ closed-form PARI specializations; and to
 [Michael De Vlieger](https://oeis.org/wiki/User:Michael_De_Vlieger) for
 reviewing the OEIS submissions above.
 
+## On-Line Encyclopedia of Integer Sequences, OEIS
+
+The OEIS (On-Line Encyclopedia of Integer Sequences) traces back to 1964, 
+when Neil Sloane began recording integer sequences on file cards as a graduate 
+student at Cornell, in search of a formula for a sequence he could not find in 
+any library. That collection grew into two published books (1973, 1995) before 
+going online in 1996 and, in 2009, becoming an independent, donor-supported foundation. 
+It now holds well over 300,000 sequences, is queried by researchers across mathematics 
+and the sciences hundreds of thousands of times a day, and has been credited in the literature 
+thousands of times with results that "would not have been discovered" without it. Two of the 
+general arrays this paper's data connects to (A332648, A332649; see below) are themselves built, 
+in part, on much older sequences in the database — A000081, the classical count of rooted trees, 
+among them - a small illustration of how deeply new entries here end up woven into decades of prior work.
+
+None of this is maintained by a paid staff or a single institution: the entire database rests on volunteer
+editors, scattered across the world, who review, correct, and discuss every submission before it becomes 
+permanent - work that is largely invisible to the public, but without which none of the data below would
+carry the same reference value. The exchanges recorded in this repository with several of them (see Acknowledgments)
+are, on their own small scale, an ordinary instance of that mechanism: a piece of research made sharper, more correct,
+and more useful, not despite community review, but because of it.
+
 ## Citation
 
 If you use this code, please cite the paper above. A citable archive of this
-repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100
+repository is available via Zenodo: https://doi.org/10.5281/zenodo.21461100 or https://hal.science/hal-05712280v1
 
 ## Author
 
