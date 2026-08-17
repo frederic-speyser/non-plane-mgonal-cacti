@@ -248,7 +248,7 @@ below). Status so far:
   editor's request and is pending submission to the PROG field)
 - *m* = 8, rooted: [A397546](https://oeis.org/A397546) (approved;
   same defense as A397210)
-- *m* = 8, unrooted: **not submitted to the OEIS, and not planned.**
+- *m* = 8, unrooted: **not submitted to the OEIS, and none is planned.**
   Unlike its odd-*m* counterpart, this column admits no closed-form
   simplification (see `verify_pari_dissymmetry_even_m.gp`), so it does not
   meet the same column-specific-content standard applied to A398575. The
@@ -260,16 +260,22 @@ below). Status so far:
 
 ## Acknowledgments
 
-Thanks to Andrew Howroyd, a long-standing OEIS editor whose own work centers
-on Pólya enumeration, for identifying the relation to A332648/A332649 (both
-his own OEIS arrays) and for an independent PARI verification of the data;
-to Sean A. Irvine for a close editorial reading that prompted a sharper,
-parity-by-parity account of why some of these entries are defensible as
-standalone sequences and others are not, and for the resulting closed-form
-PARI specialization in `verify_pari_dissymmetry_odd_m.gp`; and to Stefano
-Spezia, Robert C. Lyons, and Michael De Vlieger for their review of the
-OEIS submissions above. Further contributors may be added here as the
-review of the remaining submissions proceeds.
+Thanks, in the order their involvement began, to [Stefano Spezia](https://oeis.org/wiki/User:Stefano_Spezia)
+for repeated corrections to link formatting; to
+[Andrew Howroyd](https://oeis.org/wiki/User:Andrew_Howroyd), a long-standing
+OEIS editor whose own work centers on Pólya enumeration, for identifying
+the relation to A332648/A332649 (both his own OEIS arrays), for an
+independent PARI verification of the data, and for the general U(n,k)
+formula this repository's PARI scripts build on; to
+[Robert C. Lyons](https://oeis.org/wiki/User:Robert_C._Lyons) for a PROG
+formatting correction; to
+[Sean A. Irvine](https://oeis.org/wiki/User:Sean_A._Irvine), the OEIS's
+Managing Editor, for approving several of these entries and for a close
+editorial reading that prompted the parity-by-parity account of which
+entries are defensible as standalone sequences, and the resulting
+closed-form PARI specializations; and to
+[Michael De Vlieger](https://oeis.org/wiki/User:Michael_De_Vlieger) for
+reviewing the OEIS submissions above.
 
 ## Citation
 
