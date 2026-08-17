@@ -230,12 +230,12 @@ with two different outcomes:
   b-file for this column instead of a standalone sequence.
 
 ## Data availability
-
+ 
 The integer sequences computed by `mgonal_cactus_series.py` have been
 submitted to the OEIS (On-Line Encyclopedia of Integer Sequences), or are
 in the process of being submitted, with one deliberate exception (see
 below). Status so far:
-
+ 
 - *m* = 5, rooted: [A398033](https://oeis.org/A398033) (approved)
 - *m* = 5, unrooted: [A397250](https://oeis.org/A397250) (approved)
 - *m* = 6, rooted: [A398034](https://oeis.org/A398034) (approved)
@@ -247,16 +247,28 @@ below). Status so far:
   `verify_pari_dissymmetry_odd_m.gp` was prepared in response to an
   editor's request and is pending submission to the PROG field)
 - *m* = 8, rooted: [A397546](https://oeis.org/A397546) (approved;
-  same defense as A397210)
-- *m* = 8, unrooted: **not submitted to the OEIS, and none is planned.**
-  Unlike its odd-*m* counterpart, this column admits no closed-form
-  simplification (see `verify_pari_dissymmetry_even_m.gp`), so it does not
-  meet the same column-specific-content standard applied to A398575. The
-  data is independently computed and verified by two unrelated methods
-  (`verify_pari_dissymmetry_even_m.gp` and `exhaustive_iso_m8.py`), and is
-  kept in this repository for transparency and reuse — e.g. as a
-  candidate b-file addition to A332649 — rather than as a standalone
-  sequence.
+  same defense as A397210](https://oeis.org/A397210)
+- *m* = 8, unrooted: no standalone OEIS entry is needed. Unlike its
+odd-m counterpart, this column admits no closed-form simplification
+(see verify_pari_dissymmetry_even_m.gp), so it does not meet the same
+column-specific-content standard applied to [A398575](https://oeis.org/A398575) — and, unlike the
+unsubmitted state that implies, it doesn't need to: this data is already
+exactly column k=8 of [A332649](https://oeis.org/A332649), which already
+cites this paper directly in its own LINKS field. The data is
+additionally independently verified here by two unrelated methods
+(verify_pari_dissymmetry_even_m.gp and exhaustive_iso_m8.py); the
+first 25 terms are given below for convenience, exactly matching
+A332649's column, so a reader need not cross-reference the array by
+hand to check them.
+```
+  1, 1, 5, 20, 143, 1093, 9722, 91391, 904526, 9252640, 97270908,
+  1044943778, 11430591994, 126963184536, 1428841019150, 16264206892527,
+  186988340243713, 2168829020256349, 25353934900700645,
+  298483649366990445, 3536302231595484891, 42137916228195845362,
+  504740013438315430685, 6074890716624968552306,
+  73436917379208263817988
+```
+ 
 
 ## Acknowledgments
 
